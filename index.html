@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b111b" />
+    <script>
+      (function () {
+        var theme = 'night';
+        var language = 'en';
+        try {
+          var savedTheme = localStorage.getItem('ais-theme');
+          var savedLanguage = localStorage.getItem('ais-language');
+          if (['night', 'light', 'galaxy', 'cyberpunk', 'monochrome', 'glassmorphism'].indexOf(savedTheme) !== -1) theme = savedTheme;
+          if (savedLanguage === 'ru' || savedLanguage === 'en' || savedLanguage === 'uz') language = savedLanguage;
+        } catch (error) {}
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('lang', language);
+        var themeColors = {night: '#0b111b', light: '#f5f7f4', galaxy: '#0e1022', cyberpunk: '#151321', monochrome: '#111111', glassmorphism: '#11252a'};
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColors[theme]);
+      })();
+    </script>
+    <meta name="description" content="AiS is a multi-model AI platform with web chat, Telegram access and an OpenAI-compatible API for connecting applications to multiple AI models." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AiS" />
+    <meta property="og:title" content="AiS — Multi-Model AI Platform" />
+    <meta property="og:description" content="AiS is a multi-model AI platform with web chat, Telegram access and an OpenAI-compatible API for connecting applications to multiple AI models." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale:alternate" content="uz_UZ" />
+    <meta property="og:image" content="/social-preview.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:alt" content="AiS — Multi-Model AI Platform. Chat, APIs, Telegram and the AiS ecosystem." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AiS — Multi-Model AI Platform" />
+    <meta name="twitter:description" content="AiS is a multi-model AI platform with web chat, Telegram access and an OpenAI-compatible API for connecting applications to multiple AI models." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>AiS — Multi-Model AI Platform</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
